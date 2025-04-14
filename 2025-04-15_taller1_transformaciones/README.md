@@ -77,7 +77,7 @@ NOTA: Verifica que estés en la carpeta correcta (cubo 3d)
 
 En **Box.jsx**:
 
-Se pueden modificar estos parámetros en el notebook para cambiar el movimiento del círculo:
+Se pueden modificar estos parámetros para cambiar el movimiento del cubo:
 
     useFrame((state)  =>  {
     
@@ -92,7 +92,7 @@ Se pueden modificar estos parámetros en el notebook para cambiar el movimiento 
     boxRef.current.scale.set(scale, scale, scale)
     
     })    
-Se pueden modificar estos parámetros en el notebook para cambiar la apariencia del círculo:
+Se pueden modificar estos parámetros para cambiar la apariencia del cubo:
 
     return (
     
