@@ -1,6 +1,6 @@
 # Actividad en Python
 
-  ![Animación de un triángulo rotando, trasladándose y creciendo en tamaño](../python/animation.gif)
+  ![Animación de un triángulo rotando, trasladándose y creciendo en tamaño](https://github.com/mafecala/compuvisual/blob/master/2025-04-15_taller1_transformaciones/python/animation.gif)
 
 ## Descripción
 Proyecto en **Jupyter Notebook** que aplica transformaciones geométricas a un triángulo:
@@ -36,7 +36,7 @@ Se pueden modificar estos parámetros en el notebook:
 
 # Three.js con React Three Fiber
 
-  ![Animación de un cubo rotando, trasladándose y cambiando de tamaño](../threejs/threejs-demostracion.gif)
+  ![Animación de un cubo rotando, trasladándose y cambiando de tamaño](https://github.com/mafecala/compuvisual/blob/master/2025-04-15_taller1_transformaciones/threejs/threejs-demostracion.gif)
 
 ## Descripción
 Proyecto con **Vite** y **React Three Fiber**. Un cubo rota sobre su propio eje, sigue una trayectoria senoidal y escala con una función temporal. 
