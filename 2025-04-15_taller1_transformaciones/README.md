@@ -1,6 +1,6 @@
 # Actividad en Python
 
-  ![Animación de un triángulo rotando, trasladándose y creciendo en tamaño](../python/animation.gif)
+  ![Animación de un triángulo rotando, trasladándose y creciendo en tamaño](https://github.com/mafecala/compuvisual/blob/master/2025-04-15_taller1_transformaciones/python/animation.gif)
 
 ## Descripción
 Proyecto en **Jupyter Notebook** que aplica transformaciones geométricas a un triángulo:
@@ -36,7 +36,7 @@ Se pueden modificar estos parámetros en el notebook:
 
 # Three.js con React Three Fiber
 
-  ![Animación de un cubo rotando, trasladándose y cambiando de tamaño](../threejs/threejs-demostracion.gif)
+  ![Animación de un cubo rotando, trasladándose y cambiando de tamaño](https://github.com/mafecala/compuvisual/blob/master/2025-04-15_taller1_transformaciones/threejs/threejs-demostracion.gif)
 
 ## Descripción
 Proyecto con **Vite** y **React Three Fiber**. Un cubo rota sobre su propio eje, sigue una trayectoria senoidal y escala con una función temporal. 
@@ -77,7 +77,7 @@ NOTA: Verifica que estés en la carpeta correcta (cubo 3d)
 
 En **Box.jsx**:
 
-Se pueden modificar estos parámetros en el notebook para cambiar el movimiento del círculo:
+Se pueden modificar estos parámetros para cambiar el movimiento del cubo:
 
     useFrame((state)  =>  {
     
@@ -92,7 +92,7 @@ Se pueden modificar estos parámetros en el notebook para cambiar el movimiento 
     boxRef.current.scale.set(scale, scale, scale)
     
     })    
-Se pueden modificar estos parámetros en el notebook para cambiar la apariencia del círculo:
+Se pueden modificar estos parámetros para cambiar la apariencia del cubo:
 
     return (
     
@@ -105,4 +105,41 @@ Se pueden modificar estos parámetros en el notebook para cambiar la apariencia 
     </mesh>
     
     )
+    
+# Actividad en Processing
 
+  ![Animación de un cubo rotando, trasladándose y cambiando de tamaño](https://github.com/mafecala/compuvisual/blob/master/2025-04-15_taller1_transformaciones/processing/demo-cubo.gif?raw=true)
+
+## Descripción
+
+Proyecto creado con  **Processing**. Un cubo 3D que:
+
+-   Rota sobre su propio eje
+    
+-   Se traslada siguiendo una trayectoria senoidal
+    
+-   Cambia de tamaño usando una función temporal basada en el tiempo
+
+## Cómo ejecutar
+
+1.  Instalar Processing.
+
+2.  Abrir el .pde en Processing.
+    
+3.  Ejecutarlo.
+
+## Personalización
+
+Estos valores se pueden cambiar:
+
+### Movimiento:
+
+    translate([X] * sin(millis()/[A]), 0);  // [X]=amplitud, [A]=velocidad
+    rotateY(frameCount * [B]);  // [B]=velocidad rotación
+    scale(1 + sin(millis()/[C]) * [D]);  // [C]=velocidad pulsación, [D]=intensidad
+
+### Apariencia:
+
+    box([TAMAÑO]);  // Tamaño del cubo
+    fill(R, G, B);  // Color RGB (añadir antes de box())
+    stroke(COLOR);  // Color de bordes
