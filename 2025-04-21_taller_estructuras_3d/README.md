@@ -113,7 +113,7 @@ plt.show()
 ## [](#-resultados-visuales)📊 Resultados Visuales
 
 Proyecto de Python:
-![Python](python/pythonimg.jpg)
+![Python](python/pythonimg.png)
 
 ----------
 
