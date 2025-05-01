@@ -2,7 +2,7 @@
 
 ## [](#-fecha)📅 Fecha
 
-`2025-05-01` – Fecha de entrega o realización
+`2025-05-01` 
 
 ----------
 
@@ -112,6 +112,8 @@ plt.show()
 
 ## [](#-resultados-visuales)📊 Resultados Visuales
 
+Proyecto de Python:
+![Python](python/pythonimg.jpg)
 
 ----------
 
