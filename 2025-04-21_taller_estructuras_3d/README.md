@@ -108,6 +108,82 @@ for idx, malla in enumerate(mallas):
 plt.show()
 ```
 
+
+## 🧪 Implementación (React + Three.js) 🌐✨
+
+### 🔹 Etapas realizadas
+
+1. **🔧 Preparación de escena y modelo**
+   - Importación de librerías necesarias (`react-three-fiber`, `drei`, `three`)
+   - Carga del modelo 3D en formato `.obj` usando `OBJLoader`
+   - Asignación de materiales estándar al modelo (`MeshStandardMaterial`)
+   - Configuración de la cámara y luces en la escena (`ambientLight`, `directionalLight`)
+
+2. **🔄 Aplicación de modos de visualización**
+   - Manejo del estado del modo de visualización usando `useState`
+   - Implementación de cuatro modos visuales:
+     - `faces`: material normal
+     - `wireframe`: visualización tipo alambre
+     - `edges`: resaltado de aristas con `EdgesGeometry`
+     - `points`: visualización por vértices con `PointsMaterial`
+   - Lógica para cambiar entre los modos con un botón flotante
+
+3. **🧭 Visualización e interacción**
+   - Renderizado interactivo del modelo 3D
+   - Controles de cámara con `OrbitControls` (rotar, hacer zoom, desplazar)
+   - Visualización diferenciada de geometría (según modo activo)
+   - Escalado y centrado del modelo para mejor visibilidad
+
+4. **💾 Resultados y salida**
+   - Vista en tiempo real del modelo con distintos efectos visuales
+   - Interfaz intuitiva para cambiar de vista con un clic
+   - Escenario 3D embebido directamente en una app React moderna
+
+---
+
+### 🔹 Código relevante
+
+Este fragmento muestra cómo aplicar y alternar los distintos modos de visualización sobre el modelo 3D `.obj`:
+
+```jsx
+// useState para manejar los modos
+const [mode, setMode] = useState('faces');
+const modes = ['faces', 'wireframe', 'edges', 'points'];
+
+// Dentro del componente Model
+obj.traverse((child) => {
+  if (child.isMesh) {
+    // Material base (wireframe si aplica)
+    child.material = new THREE.MeshStandardMaterial({
+      color: 'pink',
+      roughness: 0.7,
+      wireframe: mode === 'wireframe'
+    });
+
+    // Modo "points" - vértices azules
+    if (mode === 'points') {
+      const pointsMaterial = new THREE.PointsMaterial({
+        color: 'blue',
+        size: 0.05,
+      });
+      const points = new THREE.Points(child.geometry, pointsMaterial);
+      child.add(points);
+    }
+
+    // Modo "edges" - aristas negras
+    if (mode === 'edges') {
+      const edges = new THREE.EdgesGeometry(child.geometry);
+      const line = new THREE.LineSegments(
+        edges,
+        new THREE.LineBasicMaterial({ color: 'black' })
+      );
+      child.add(line);
+    }
+  }
+});
+```
+
+
 ----------
 
 ## [](#-resultados-visuales)📊 Resultados Visuales
