@@ -188,6 +188,9 @@ obj.traverse((child) => {
 
 ## [](#-resultados-visuales)📊 Resultados Visuales
 
+Proyecto de Three js:
+![Threejs](threejs/threejsimg.gif)
+
 Proyecto de Python:
 ![Python](python/pythonimg.png)
 
