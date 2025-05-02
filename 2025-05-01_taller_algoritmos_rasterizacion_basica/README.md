@@ -81,7 +81,7 @@ def bresenham(image, x0, y0, x1, y1):
 ```
 ## [](#-resultados-visuales)📊 Resultados Visuales
 
-### Línea (Algoritmo de Bresenham) ![Línea](resultados/linea.png) ### Círculo (Algoritmo de Punto Medio) ![Círculo](resultados/circulo.png) ### Triángulo (Relleno por Scanline) ![Triángulo](resultados/triangulo.png)
+ ![Línea](resultados/linea.png) ![Círculo](resultados/circulo.png) ![Triángulo](resultados/triangulo.png)
 ----------
 
 ## [](#-prompts-usados)🧩 Prompts Usados
