@@ -86,6 +86,7 @@ interact(
 ----------
 
 ## [](#-resultados-visuales)📊 Resultados Visuales
+Estas son solamente algunas de las imágenes, para verlas todas, por favor visita el notebook.
 
 ![demo](demo.png)
 ----------
