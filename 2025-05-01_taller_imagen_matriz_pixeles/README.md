@@ -86,7 +86,7 @@ interact(
 ----------
 
 ## [](#-resultados-visuales)📊 Resultados Visuales
-Estas son solamente algunas de las imágenes, para verlas todas, por favor visita el notebook.
+Estas son solamente algunas de las imágenes, para verlas todas y poder experimentar con los sliders, por favor visita el notebook en https://colab.research.google.com/drive/1pylXulXqbt69sstMnNEdj0Ux_vo4pD5E?usp=sharing
 
 ![demo](demo.png)
 ----------
