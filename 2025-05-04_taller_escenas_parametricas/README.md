@@ -168,8 +168,7 @@ const getPosition = (index, total) => {
 
 ## 📊 Resultados Visuales
 
-### Python - Visualización y Exportación
-
+### Python - Visualización de una escena generada
 ![Visualización Python](python/demo.gif)
 
 ### React Three Fiber - Visualización Interactiva
