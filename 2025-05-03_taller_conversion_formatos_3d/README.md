@@ -312,7 +312,26 @@ print(f"✅ Modelo convertido y guardado en: {output_path}")
 
 ```
 
-  
+## 🔹 Código relevante (Threejs)
+
+threejs
+
+```js
+const box = new THREE.Box3().setFromObject(newModel);
+const size = box.getSize(new THREE.Vector3());
+
+const maxDim = Math.max(size.x, size.y, size.z);
+if (maxDim > 0) {
+  const scale = 2 / maxDim;
+  newModel.scale.setScalar(scale);
+}
+
+// Forzar Y fijo
+newModel.position.set(0, 0.5, 0);
+
+```
+
+
 
 ## 📊 Resultados Visuales
 
