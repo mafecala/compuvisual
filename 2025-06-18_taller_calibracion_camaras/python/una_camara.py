@@ -6,7 +6,7 @@ import os
 # === CONFIGURACIÓN ===
 chessboard_size = (9, 6)
 square_size = 1.0  # Unidad arbitraria
-image_folder = 'images/single/'
+image_folder = './images/single/'
 save_path = './calibration_output/single_camera_params.npz'
 os.makedirs(os.path.dirname(save_path), exist_ok=True)
 
