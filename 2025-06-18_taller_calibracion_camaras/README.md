@@ -95,9 +95,13 @@ R1, R2, P1, P2, Q, _, _ = cv2.stereoRectify(mtxL, distL, mtxR, distR, grayL.shap
 ## 💻 Vista Previa
 
 Una sola cámara.
+
 ![Demo](demo.gif)
 
+
+
 Estéreo.
+
 ![Demo](demo2.gif)
 
 ## ✨ Prompts Usados
