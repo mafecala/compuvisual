@@ -76,11 +76,8 @@ Implementar el reconocimiento de acciones simples (como sentarse, levantar brazo
 ## 📁 Estructura del Proyecto
 
 acciones_pose/
-├── acciones_pose.py
+├── taller37.py
 ├── README.md
-├── demo_sentado.gif
-├── demo_brazos_arriba.gif
-└── demo_caminata.gif
 
 ---
 
