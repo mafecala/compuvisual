@@ -1,0 +1,3 @@
+class,confidence,x,y,w,h
+person,0.88,0,131,351,348
+chair,0.39,408,406,188,73

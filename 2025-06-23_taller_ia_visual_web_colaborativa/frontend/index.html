@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resultados IA Visual</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      color: #222;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.2rem;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 12px;
+    }
+
+    td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📸 Imagen capturada con detección</h1>
+  <img id="img" src="/backend/deteccion.png" alt="Imagen anotada" />
+
+  <h2>🧾 Objetos detectados</h2>
+  <table id="tabla">
+    <thead>
+      <tr>
+        <th>Clase</th>
+        <th>Confianza</th>
+        <th>X</th>
+        <th>Y</th>
+        <th>Ancho</th>
+        <th>Alto</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <footer>
+    Taller IA Visual Colaborativa · 2025
+  </footer>
+
+  <script>
+    fetch("/backend/resultados.json")
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.querySelector("#tabla tbody");
+        if (data.objects.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6">No se detectaron objetos</td></tr>';
+          return;
+        }
+        data.objects.forEach(obj => {
+          const fila = document.createElement("tr");
+          fila.innerHTML = `
+            <td>${obj.class}</td>
+            <td>${(obj.confidence * 100).toFixed(1)}%</td>
+            <td>${obj.x}</td>
+            <td>${obj.y}</td>
+            <td>${obj.w}</td>
+            <td>${obj.h}</td>
+          `;
+          tbody.appendChild(fila);
+        });
+      })
+      .catch(err => {
+        document.querySelector("#tabla tbody").innerHTML = 
+          '<tr><td colspan="6">❌ Error al cargar resultados</td></tr>';
+        console.error("Error cargando JSON:", err);
+      });
+  </script>
+
+</body>
+</html>
