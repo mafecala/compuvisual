@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AR con marcador personalizado 🎯</title>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.min.js"></script>
+
+    <script>
+      // Componente para detectar cuando el marcador aparece o desaparece
+      AFRAME.registerComponent('markerhandler', {
+        init: function () {
+          const marker = this.el;
+          marker.addEventListener('markerFound', () => {
+            console.log('📍 ¡Marcador detectado!');
+          });
+          marker.addEventListener('markerLost', () => {
+            console.log('❌ Marcador perdido.');
+          });
+        }
+      });
+    </script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene embedded
+             arjs
+             vr-mode-ui="enabled: false"
+             renderer="logarithmicDepthBuffer: true;">
+      
+      <!-- Marcador personalizado -->
+     <a-marker type="pattern" url="marcador.patt" markerhandler>
+        <!-- Modelo GLB personalizado con animación de rotación -->
+        <a-entity gltf-model="url(modelo.glb)"
+                  position="0 0.5 0"
+                  scale="2 2 2"
+                  animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+        </a-entity>
+      </a-marker>
+
+      <!-- Cámara AR -->
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
