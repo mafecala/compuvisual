@@ -104,7 +104,6 @@ for box in results.boxes:
 
 ### 🖥️ Demostraciones
 
-```
 ![demo](demobash.png)
 ![demo](demolog.png)
 ![demo](demopag.png)
